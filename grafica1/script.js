@@ -43,16 +43,38 @@ const printChart = (info) => {
                     data: data,
                     options: {
                         responsive: true,
-                        plugins: {
-                                    legend: {
-                                    position: 'top',
-                                    },
-                                    title: {
-                                            display: true,
-                                            text: `Temperatura ${city}`
-                                            }
-                                }
-                    },
+                    scales: {
+                        x: {
+                          display: true,
+                          title: {
+                            display: true,
+                            text: 'Dia',
+                            color: 'black',
+                            font: {
+                              family: 'Times',
+                              size: 20,
+                              lineHeight: 1.2,
+                            },
+                            padding: {top: 20, left: 0, right: 0, bottom: 0}
+                          }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                              display: true,
+                              text: '°C',
+                              color: 'black',
+                              font: {
+                                family: 'Times',
+                                size: 20,
+                                style: 'normal',
+                                lineHeight: 1.2
+                              },
+                              padding: {top: 30, left: 0, right: 0, bottom: 0}
+                            }
+                          }
+                        }
+                      },
                     };
 
     var myChart = new Chart(

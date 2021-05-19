@@ -7,25 +7,15 @@ const weatherChart = async () => {
 }
 const printChart = (info) => {
     const labels = [
-                    info.list[0].dt_txt,
+                    info.list[0].dt_txt
                     ];
     const data = {
         labels: labels,
             datasets: [{
-                        label: 'Presión',
-                        backgroundColor: 'green',
-                        borderColor: 'black',
-                        data: [info.list[0].main.pressure], 
-                        },{
-                        label: 'Presión al nivel del suelo',
-                        backgroundColor: 'yellow',
-                        borderColor: 'black',
-                        data: [info.list[0].main.grnd_level],   
-                        },{
-                        label: 'Presión al nivel del mar',
+                        label: 'Velocidad del Viento',
                         backgroundColor: 'blue',
                         borderColor: 'black',
-                        data: [info.list[0].main.sea_level],    
+                        data: [info.list[0].wind.speed], 
                         }
                     ]
                 };
@@ -39,7 +29,7 @@ const printChart = (info) => {
                               display: true,
                               title: {
                                 display: true,
-                                text: 'Presiones',
+                                text: 'Velocidad del viento',
                                 color: 'black',
                                 font: {
                                   family: 'Times',
@@ -53,7 +43,7 @@ const printChart = (info) => {
                                 display: true,
                                 title: {
                                   display: true,
-                                  text: 'hPa',
+                                  text: 'Km/h',
                                   color: 'black',
                                   font: {
                                     family: 'Times',
